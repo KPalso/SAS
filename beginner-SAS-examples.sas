@@ -80,7 +80,7 @@ run;
 *The format is applied. SAS doesn't know what it means. You have to know what it means.;
 
 proc format; value yesno 1='1: yes' 2='2: no';
-value vearf
+value years
 low-1989="pre-90s"
 1990-1999="nineties"
 2000-high="2k and later"
@@ -137,7 +137,7 @@ proc print data=example;
 var id name;
 where score=100;
 *titles can go before a run statement, within a PROC;
-title4 'where score=100;
+title4 'where score=100';
 run;
 title4;
 
@@ -192,7 +192,7 @@ by nums;
 run;
 proc print data=merged;
 title2 "notice what happens when one dataset doesn't have data for a case";
-title3 "nums=6 is not on the example dataset, so those are blank, but included. This is a FULL JOIN if you're familiar with SQL at all.;
+title3 "nums=6 is not on the example dataset, so those are blank, but included. This is a FULL JOIN if you're familiar with SQL at all";
 run;
 proc print data=merged (obs=2) noobs;
 title2 "only the first two rows are printed because of the (obs=2) code";
