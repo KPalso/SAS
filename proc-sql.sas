@@ -26,3 +26,18 @@ group by name
 order by names desc
 ;
 quit;
+/*****I use the following a lot. Especially for checking when I calculate weights. 
+You can put the macro variables in titles and other things to do comparisons.******/
+%let rowcheck=;
+proc sql noprint;
+select count(*) into :rowcheck
+from sumgroup;
+quit;
+%put &rowcheck;
+
+%let sumcheck=;
+proc sql noprint;
+select sum(count) into :sumcheck
+from sumgroup;
+quit;
+%put &sumcheck;
